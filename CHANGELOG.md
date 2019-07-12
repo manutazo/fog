@@ -4748,7 +4748,7 @@ Watchers      | 2634
 *   remove a debug entry. *thanks John E. Vincent*
 *   Allows to set the account meta key by setting hp_account_meta_key, needed to generate temp urls using the HP provider, explicitly, instead of using hp_secret_key. If hp_account_meta_key is not given hp_secret_key is used as hp_account_meta_key. *thanks Julian Fischer*
 *   HP uses a different strategy to create the signature that is passed to swift than OpenStack.  As the HP provider is broadly used by OpenStack users the OpenStack strategy is applied when the `@hp_account_meta_key` is given. *thanks Julian Fischer*
-*   Adds Fog::Storage::HP::File#url method to enable compatibility with Fog::Storage::AWS::File. *thanks Julian Fischer*
+*   Adds Fog::Storage::HP::File#url method to enable compatibility with Fog::AWS::Storage::File. *thanks Julian Fischer*
 *   Fixed bug undefined local variable or method account_meta_key. *thanks Julian Fischer*
 *   Bugfix: `@hp_secret_key` instead of `@hp_account_meta_key` required in storage.rb:186. *thanks Julian Fischer*
 *   Avoids Digest::HMAC.hexdigest to remain 1.8.7 compatibility. *thanks Julian Fischer*
@@ -6933,11 +6933,11 @@ Watchers      | 2258
 *   port off of sts for credentials, now uses signature v4. *thanks geemus*
 
 #### [aws|storage]
-*   Add Fog::Storage::AWS#delete_multiple_objects. *thanks Garret Alfert*
-*   Add mock for Fog::Storage::AWS#delete_multiple_objects. *thanks Garret Alfert*
+*   Add Fog::AWS::Storage#delete_multiple_objects. *thanks Garret Alfert*
+*   Add mock for Fog::AWS::Storage#delete_multiple_objects. *thanks Garret Alfert*
 *   Little improvements to delete_multiple_objects tests. *thanks Garret Alfert*
-*   Add Fog::Storage::AWS#delete_multiple_objects. *thanks Garret Alfert*
-*   Add mock for Fog::Storage::AWS#delete_multiple_objects. *thanks Garret Alfert*
+*   Add Fog::AWS::Storage#delete_multiple_objects. *thanks Garret Alfert*
+*   Add mock for Fog::AWS::Storage#delete_multiple_objects. *thanks Garret Alfert*
 *   Little improvements to delete_multiple_objects tests. *thanks Garret Alfert*
 
 #### [core]
@@ -8430,7 +8430,7 @@ Watchers      | 1874
 #### [aws|storage]
 *   Simple multipart uploads; supports files > 5GB. *thanks Aaron Suggs*
 *   Automatically abort multipart uploads on exceptions. *thanks Aaron Suggs*
-*   Add mock for Fog::Storage::AWS#put_bucket_website. *thanks Garret Alfert*
+*   Add mock for Fog::AWS::Storage#put_bucket_website. *thanks Garret Alfert*
 *   Handle S3 object deletions in the face of versioning. *thanks Kevin Menard*
 *   Return the object version in the request header and set an attribute value in the model. *thanks Kevin Menard*
 *   Allow options to be passed to the destroy method, facilitating passing of versionId. *thanks Kevin Menard*
@@ -8842,7 +8842,7 @@ Watchers      | 1731
 *   parse SQS timestamps as milliseconds. *thanks Andrew Bruce*
 *   Allow use of sa-east-1 in the ec2 mock as well. *thanks Andy Delcambre*
 *   Enabled tests for setting S3 ACL by id and uri on buckets and objects when mocking. *thanks Arvid Andersson*
-*   Added acl_to_hash helper method to Fog::Storage::AWS. *thanks Arvid Andersson*
+*   Added acl_to_hash helper method to Fog::AWS::Storage. *thanks Arvid Andersson*
 *   Ensuring that get_object_acl and get_bucket_acl mock methods returns a hash representation of the ACL. *thanks Arvid Andersson*
 *   Created Rackspace LB models folder. *thanks Brian Hartsock*
 *   This patch adds the ability to specify security groups by security group id, rather than group name.  This is a required feature to use security groups within a VPC. *thanks Eric Stonfer*
@@ -8857,8 +8857,8 @@ Watchers      | 1731
 *   [Brightbox]Protocol is no longer required parameter for firewall. *thanks Hemant Kumar*
 *   Add implementation of DescribeInstanceStatus. *thanks JD Huntington & Jason Hansen*
 *   fixed type-o in rdoc on Fog::DNS:DNSMadeEasy. *thanks John Dyer*
-*   add query options to Fog::Storage::AWS#get_object_https_url. *thanks Mateusz Juraszek*
-*   add options hash to Fog::Storage::AWS::File#url and Fog::Storage::AWS::Files#get_https_url which use get_object_https_url method. *thanks Mateusz Juraszek*
+*   add query options to Fog::AWS::Storage#get_object_https_url. *thanks Mateusz Juraszek*
+*   add options hash to Fog::AWS::Storage::File#url and Fog::AWS::Storage::Files#get_https_url which use get_object_https_url method. *thanks Mateusz Juraszek*
 *   add query param to get_object_http_url for consistency. *thanks Mateusz Juraszek*
 *   Fix regression in Rakefile introduced in 70e7ea13. *thanks Michael Brodhead*
 *   add são paulo/brasil region. *thanks Raphael Costa*
@@ -9132,7 +9132,7 @@ Watchers      | 1667
 *   added alarm_data_tests. *thanks Michael Zeng*
 *   spacing change. *thanks Michael Zeng*
 *   AWS#hash_to_acl - add support for EmailAddress and URI grantee types. *thanks Nathan Sutton*
-*   Test and improve Fog::Storage::AWS.hash_to_acl. *thanks Nathan Sutton*
+*   Test and improve Fog::AWS::Storage.hash_to_acl. *thanks Nathan Sutton*
 *   Adding a method to unmock Fog. Addresses issue #594. *thanks Nathan Sutton*
 *   Adding documentation for Fog.unmock! and Fog::Mock.reset. *thanks Nathan Sutton*
 *   added linode ssh support. *thanks Nicholas Ricketts*
@@ -9726,7 +9726,7 @@ Watchers      | 1427
 *   Allow tag filtering for images. *thanks Dylan Egan*
 *   Set imageOwnerAlias to self. Not 100% on this, but it will allow you to search for images with 'owner-alias' => 'self'. *thanks Dylan Egan*
 *   Back to using Owner. A couple of tests for it too. *thanks Dylan Egan*
-*   Added support for delimiter option in Fog::Storage::AWS::Mock object. *thanks Erik Terpstra*
+*   Added support for delimiter option in Fog::AWS::Storage::Mock object. *thanks Erik Terpstra*
 *   Link to EBS snapshots blog post. *thanks Gavin Sandie*
 *   Add force stop functionality to AWS Instance. *thanks John Ferlito*
 *   * Changed LoadError to Fog::Error::LoadError when missing configuration     * When running from command line, rescue the exception, and print the help message. *thanks Mark A. Miller*
